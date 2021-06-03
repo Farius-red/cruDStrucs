@@ -12,17 +12,21 @@
     </head>
     <body>
         <script language="javascript">
-            function actualizar(ac){
-                document.getElementById('metodo').value = ac;
-            }
-            function crear(cr){
-                document.getElementById('metodo').value = cr; 
-            }   
-             function eliminar(el){
-                document.getElementById('metodo').value = el; 
-            }  
+        function crud(c) {
+
+    document.getElementById('metodo').value = c;
+    let formulario = document.getElementById('crudForm');
+    if (document.getElementById('metodo').value === '') {
+        alert('el value del input esta vacio');
+    } else {
+        alert('envio correcto');
+        formulario.submit();
+    }
+
+}   
         </script>
-    <html:form action="/crud">
+        <html:form styleId="crudForm"  action="/crud" >
+            id: <input name="idU"/>
        Nombres: <input name="nombres"/>
        Apellidos:  <input name="apellidos"/>
        edad: <input name="edad"/>
@@ -32,9 +36,9 @@
        direccion:  <input name="direccion"/>
         <input id="metodo" name="crear" type="hidden"  />
         
-        <button  onclick="crear('insertar')"  type="submit">crear</button>
-        <button  onclick="actualizar('actualizar')"  type="submit">actualizar</button>
-        <button  onclick="eliminar('eliminar')"  type="submit">eliminar</button>
+        <button  onclick="crud('insertar')"  type="button">crear</button>
+        <button  onclick="crud('actualizar')"  type="button">actualizar</button>
+        <button  onclick="crud('eliminar')"  type="button">eliminar</button>
     </html:form>
     </body>
 </html>

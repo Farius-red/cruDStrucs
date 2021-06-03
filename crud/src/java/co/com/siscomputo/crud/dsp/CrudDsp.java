@@ -19,12 +19,18 @@ public class CrudDsp extends DispatchAction {
     ) {
         try {
             CrudForm crudForm = (CrudForm) form;
-            CrearDAO creardao = new CrearDAO();
             crudForm.setAction(1);
+            CrearDAO creardao = new CrearDAO();
 
-            creardao.insert();
+            creardao.insert(
+                    crudForm.getIdU(),  crudForm.getNombres(), crudForm.getApellidos(),
+                    crudForm.getEdad(), crudForm.getPais(), crudForm.getDepartamento(),
+                    crudForm.getCiudad(), crudForm.getDireccion(),
+                    crudForm.getAction()
+            );
 
         } catch (Exception e) {
+            System.out.println("algo falla");
             e.printStackTrace();
         }
         return mapping.findForward("listar");
@@ -41,9 +47,9 @@ public class CrudDsp extends DispatchAction {
             CrearDAO creardao = new CrearDAO();
             crudForm.setAction(2);
         } catch (Exception e) {
-          
+
             e.printStackTrace();
-              return mapping.findForward("listar");
+            return mapping.findForward("listar");
         }
         return mapping.findForward("listar");
     }

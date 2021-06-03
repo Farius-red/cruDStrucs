@@ -1,10 +1,11 @@
 package co.com.siscomputo.crud.forms;
 
-import co.com.siscomputo.DAO.CrearDAO;
+
 import org.apache.struts.action.ActionForm;
 
 public class CrudForm extends ActionForm {
 
+    private Integer idU;
     private String nombres;
     private String apellidos;
     private Integer edad;
@@ -14,12 +15,12 @@ public class CrudForm extends ActionForm {
     private String direccion;
     private Integer action;
 
-    public Integer getAction() {
-        return action;
+    public Integer getIdU() {
+        return idU;
     }
 
-    public void setAction(Integer action) {
-        this.action = action;
+    public void setIdU(Integer idU) {
+        this.idU = idU;
     }
 
     public String getNombres() {
@@ -74,9 +75,18 @@ public class CrudForm extends ActionForm {
         return direccion;
     }
 
-    public void setDireccion(String dirección) {
+    public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-        
-  
+
+    public Integer getAction() {
+        return action;
+    }
+
+    public void setAction(Integer action) {
+        this.action = action;
+    }
+
+   
+
 }

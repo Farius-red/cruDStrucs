@@ -36,19 +36,19 @@
     </global-exceptions>
 
     <global-forwards>
-     forwards
+  
     </global-forwards>
 
     <action-mappings>
      
         <action path="/crud"
-            type="co.com.siscomputo.crud.forms.CrudDsp"
+            type="co.com.siscomputo.crud.dsp.CrudDsp"
             name="cruds"
             scope="request"
             validate="false"
             parameter="crear"
         >
-            <forwards name="listar"  path="/listaUs.jsp"> </forwards>      
+            <forward name="listar"  path="/listaUs.jsp"> </forward>      
 
           </action>
     </action-mappings>
