@@ -2,11 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/SISCOMPUTO/cruDStrucs/crud/src/java/co/com/siscomputo/crud/dsp/CrudDsp.java</file>
-            <file>file:/C:/Users/SISCOMPUTO/cruDStrucs/crud/web/WEB-INF/struts-config.xml</file>
-            <file>file:/C:/Users/SISCOMPUTO/cruDStrucs/crud/src/java/co/com/siscomputo/DAO/CrearDAO.java</file>
-            <file>file:/C:/Users/SISCOMPUTO/cruDStrucs/crud/web/crudusu.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

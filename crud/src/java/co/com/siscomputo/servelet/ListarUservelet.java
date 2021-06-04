@@ -5,8 +5,11 @@
  */
 package co.com.siscomputo.servelet;
 
+import co.com.siscomputo.DAO.ListarDAO;
+import co.com.siscomputo.crud.forms.CrudForm;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,17 +35,11 @@ public class ListarUservelet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ListarUservelet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ListarUservelet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            ListarDAO listar = new ListarDAO();
+            ArrayList<CrudForm> listaU = listar.list();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

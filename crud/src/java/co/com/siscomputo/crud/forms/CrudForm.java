@@ -4,7 +4,7 @@ package co.com.siscomputo.crud.forms;
 import org.apache.struts.action.ActionForm;
 
 public class CrudForm extends ActionForm {
-
+    
     private Integer idU;
     private String nombres;
     private String apellidos;
