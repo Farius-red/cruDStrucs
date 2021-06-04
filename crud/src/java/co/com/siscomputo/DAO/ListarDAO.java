@@ -9,6 +9,7 @@ import co.com.siscomputo.conexion.DBConnection;
 import co.com.siscomputo.crud.forms.CrudForm;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
@@ -16,35 +17,28 @@ import java.sql.SQLException;
  * @author SISCOMPUTO
  */
 public class ListarDAO {
-    
+
     public String list(){
        
         String rta="";
         Connection con = null;
-        CallableStatement stmt = null;
+        PreparedStatement pst = null;
 
         try {
-             CrudForm crudform = new CrudForm();
+             
             con = DBConnection.getConnection();
-            stmt = con.prepareCall("{aqui nombre proceso(?,?,?,?,?,?,?)}");
+           
+             String sql= "SELECT * FROM USUARIOS";
             
-            stmt.registerOutParameter(1, java.sql.Types.VARCHAR);
-            stmt.registerOutParameter(2, java.sql.Types.VARCHAR);
-            stmt.registerOutParameter(3, java.sql.Types.NUMERIC);
-            stmt.registerOutParameter(4, java.sql.Types.VARCHAR);
-            stmt.registerOutParameter(5, java.sql.Types.VARCHAR);
-            stmt.registerOutParameter(6, java.sql.Types.VARCHAR);
-            stmt.registerOutParameter(7, java.sql.Types.VARCHAR);
+             pst.execute();
             
-            stmt.execute();
-    
              rta="Esta listandoCorrectamente";
         } catch (Exception e) {
             rta="algo salio mal";
             e.printStackTrace();
         }finally{
 			try {
-				stmt.close();
+				pst.close();
 				con.close();
 				
 			} catch (SQLException e) {

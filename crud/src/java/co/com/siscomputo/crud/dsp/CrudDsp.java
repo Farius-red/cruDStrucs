@@ -44,8 +44,15 @@ public class CrudDsp extends DispatchAction {
     ) {
         try {
             CrudForm crudForm = (CrudForm) form;
+               crudForm.setAction(2);
             CrearDAO creardao = new CrearDAO();
-            crudForm.setAction(2);
+              creardao.insert(crudForm.getIdU(),  crudForm.getNombres(), crudForm.getApellidos(),
+                    crudForm.getEdad(), crudForm.getPais(), crudForm.getDepartamento(),
+                    crudForm.getCiudad(), crudForm.getDireccion(),
+                    crudForm.getAction());
+            
+            
+            
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -62,8 +69,15 @@ public class CrudDsp extends DispatchAction {
     ) {
         try {
             CrudForm crudForm = (CrudForm) form;
+             crudForm.setAction(3);
             CrearDAO creardao = new CrearDAO();
-            crudForm.setAction(3);
+            
+             creardao.insert(crudForm.getIdU(),  crudForm.getNombres(), crudForm.getApellidos(),
+                    crudForm.getEdad(), crudForm.getPais(), crudForm.getDepartamento(),
+                    crudForm.getCiudad(), crudForm.getDireccion(),
+                    crudForm.getAction());
+             
+             
         } catch (Exception e) {
             e.printStackTrace();
         }
