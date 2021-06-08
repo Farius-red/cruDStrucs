@@ -7,6 +7,7 @@ package co.com.siscomputo.servelet;
 
 import co.com.siscomputo.DAO.ListarDAO;
 import co.com.siscomputo.crud.forms.CrudForm;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -38,6 +39,14 @@ public class ListarUservelet extends HttpServlet {
         try {
             ListarDAO listar = new ListarDAO();
             ArrayList<CrudForm> listaU = listar.list();
+            
+            PrintWriter out = response.getWriter();
+            
+            Gson gson = new Gson();
+           String rta= gson.toJson(listaU);
+           out.print(rta);
+           out.flush();
+           
         } catch (Exception e) {
             e.printStackTrace();
         }
